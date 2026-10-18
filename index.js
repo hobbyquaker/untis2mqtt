@@ -16,7 +16,7 @@ import config, {GROUPS} from './config.js';
 import pkg from './package.json' with {type: 'json'};
 import {loadAccounts} from './lib/accounts.js';
 import {handle as handleInstall} from './lib/install.js';
-import {allItems, childItems, extraItems, parseGroups, schoolItems} from './lib/items.js';
+import {allItems, childItems, extraItems, parseGroups, schoolItems, weekItems} from './lib/items.js';
 import {
     homeworkRange,
     parseAbsences,
@@ -181,6 +181,7 @@ function publishAll() {
         }
         const result = childItems(child.item, timetable, now, {timeZone, groups});
         publishItems(result.items);
+        publishItems(weekItems(child.item, timetable, now, {timeZone, groups}));
         slots.push(result.slots);
     }
     publishItems(allItems(slots, {groups}));
@@ -278,7 +279,8 @@ async function poll() {
             await discoverChildren();
         }
         const start = today();
-        const end = addDays(start, Math.max(1, Number(config.days) || 14));
+        // at least three weeks: the week of the next school day and the one after it
+        const end = addDays(start, Math.max(21, Number(config.days) || 14));
         for (const child of children) {
             const days = await child.session.timetable(child.id, start, end);
             timetables.set(

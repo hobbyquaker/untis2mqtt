@@ -213,3 +213,13 @@ describe('slots and live', () => {
         assert.equal(combineSummaries([tt.get('2026-10-17').summary]).school, false);
     });
 });
+
+describe('weeks', () => {
+    test('the Monday of a date', async () => {
+        const {weekStart} = await import('../lib/timetable.js');
+        assert.equal(weekStart('2026-10-19'), '2026-10-19');
+        assert.equal(weekStart('2026-10-23'), '2026-10-19');
+        assert.equal(weekStart('2026-10-25'), '2026-10-19');
+        assert.equal(weekStart('2026-11-01'), '2026-10-26');
+    });
+});

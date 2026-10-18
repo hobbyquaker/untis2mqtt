@@ -10,7 +10,7 @@ import pkg from './package.json' with {type: 'json'};
 export const DISCOVERY = {cloud: true, needs: ['school']};
 
 /** item groups --publish can switch; all on by default */
-export const GROUPS = ['day', 'live', 'timetable', 'homework', 'exams', 'absences', 'messages', 'school'];
+export const GROUPS = ['day', 'live', 'timetable', 'week', 'homework', 'exams', 'absences', 'messages', 'school'];
 
 export const OPTIONS = {
     server: {
@@ -68,7 +68,8 @@ export const OPTIONS = {
     },
     days: {
         type: 'number',
-        describe: 'days ahead to fetch, for the next school day and the lessons to come',
+        describe:
+            'days ahead for homework and the next school day; the timetable is fetched for at least 21 (two weeks ahead)',
         default: 14,
     },
     timezone: {
