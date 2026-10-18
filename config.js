@@ -82,6 +82,11 @@ export const OPTIONS = {
         describe: 'days ahead to fetch, watch for changes and publish',
         default: 14,
     },
+    timezone: {
+        type: 'string',
+        describe: 'time zone of the school, for the offsets of the published times (a container often runs in UTC)',
+        default: 'Europe/Berlin',
+    },
     lang: {
         type: 'string',
         describe: 'language of the html output and the alert texts',
