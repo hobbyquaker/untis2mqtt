@@ -1,0 +1,3156 @@
+{
+  "format": 5,
+  "days": [
+    {
+      "date": "2026-10-11",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-12",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1022, 1023],
+          "duration": {
+            "start": "2026-10-12T07:40",
+            "end": "2026-10-12T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "c0c0c0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T2",
+                "longName": "T3 long",
+                "displayName": "T2",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F1",
+                "longName": "Fach 1",
+                "displayName": "F1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": [
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K1",
+                "longName": "K2 long",
+                "displayName": "K1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1024, 1025],
+          "duration": {
+            "start": "2026-10-12T09:30",
+            "end": "2026-10-12T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0080c0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F13",
+                "longName": "Fach 13",
+                "displayName": "F13",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R3",
+                "longName": "R4 long",
+                "displayName": "R3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1026, 1027],
+          "duration": {
+            "start": "2026-10-12T11:20",
+            "end": "2026-10-12T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "ff8000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F10",
+                "longName": "Fach 10",
+                "displayName": "F10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R5",
+                "longName": "R6 long",
+                "displayName": "R5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-13",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1028, 1029],
+          "duration": {
+            "start": "2026-10-13T07:40",
+            "end": "2026-10-13T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "617fb2",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F14",
+                "longName": "Fach 14",
+                "displayName": "F14",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R7",
+                "longName": "R8 long",
+                "displayName": "R7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1030, 1031],
+          "duration": {
+            "start": "2026-10-13T09:30",
+            "end": "2026-10-13T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "80ffff",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T8",
+                "longName": "T9 long",
+                "displayName": "T8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F9",
+                "longName": "Fach 9",
+                "displayName": "F9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R9",
+                "longName": "R10 long",
+                "displayName": "R9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1032, 1033],
+          "duration": {
+            "start": "2026-10-13T11:20",
+            "end": "2026-10-13T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "80ff00",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F5",
+                "longName": "Fach 5",
+                "displayName": "F5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1034],
+          "duration": {
+            "start": "2026-10-13T12:50",
+            "end": "2026-10-13T13:45"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 4,
+          "color": "bfc8cf",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T10",
+                "longName": "T11 long",
+                "displayName": "T10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F6",
+                "longName": "Fach 6",
+                "displayName": "F6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K1",
+                "longName": "K2 long",
+                "displayName": "K1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K3",
+                "longName": "K4 long",
+                "displayName": "K3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K5",
+                "longName": "K6 long",
+                "displayName": "K5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K7",
+                "longName": "K8 long",
+                "displayName": "K7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K9",
+                "longName": "K10 long",
+                "displayName": "K9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1035],
+          "duration": {
+            "start": "2026-10-13T14:05",
+            "end": "2026-10-13T14:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 5,
+          "color": "8cc936",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F12",
+                "longName": "Fach 12",
+                "displayName": "F12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R11",
+                "longName": "R2 long",
+                "displayName": "R11",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-14",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1036],
+          "duration": {
+            "start": "2026-10-14T07:40",
+            "end": "2026-10-14T08:25"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "ff0000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F3",
+                "longName": "Fach 3",
+                "displayName": "F3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1037],
+          "duration": {
+            "start": "2026-10-14T08:30",
+            "end": "2026-10-14T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0000a0",
+          "notesAll": "",
+          "icons": ["HOMEWORK"],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T1",
+                "longName": "T14 long",
+                "displayName": "T1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F8",
+                "longName": "Fach 8",
+                "displayName": "F8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1038, 1039],
+          "duration": {
+            "start": "2026-10-14T09:30",
+            "end": "2026-10-14T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "ff80ff",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F2",
+                "longName": "Fach 2",
+                "displayName": "F2",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R12",
+                "longName": "R13 long",
+                "displayName": "R12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1040],
+          "duration": {
+            "start": "2026-10-14T11:20",
+            "end": "2026-10-14T12:05"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "CHANGED",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 4,
+          "color": "ff8000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "ADDED",
+                "shortName": "T15",
+                "longName": "T16 long",
+                "displayName": "T15",
+                "displayNameLabel": "text 4"
+              },
+              "removed": {
+                "type": "TEACHER",
+                "status": "REMOVED",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              }
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F10",
+                "longName": "Fach 10",
+                "displayName": "F10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "ADDED",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": {
+                "type": "ROOM",
+                "status": "REMOVED",
+                "shortName": "R5",
+                "longName": "R6 long",
+                "displayName": "R5",
+                "displayNameLabel": "text 4"
+              }
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1041],
+          "duration": {
+            "start": "2026-10-14T12:05",
+            "end": "2026-10-14T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 5,
+          "color": "ffff80",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F7",
+                "longName": "Fach 7",
+                "displayName": "F7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-15",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1042, 1043],
+          "duration": {
+            "start": "2026-10-15T07:40",
+            "end": "2026-10-15T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "ff0000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F3",
+                "longName": "Fach 3",
+                "displayName": "F3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1044, 1045],
+          "duration": {
+            "start": "2026-10-15T09:30",
+            "end": "2026-10-15T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0000a0",
+          "notesAll": "",
+          "icons": ["HOMEWORK"],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T1",
+                "longName": "T14 long",
+                "displayName": "T1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F8",
+                "longName": "Fach 8",
+                "displayName": "F8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1046, 1047],
+          "duration": {
+            "start": "2026-10-15T11:20",
+            "end": "2026-10-15T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "ff80ff",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F2",
+                "longName": "Fach 2",
+                "displayName": "F2",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R14",
+                "longName": "R15 long",
+                "displayName": "R14",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1048],
+          "duration": {
+            "start": "2026-10-15T12:50",
+            "end": "2026-10-15T13:45"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 4,
+          "color": "bfc8cf",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T10",
+                "longName": "T11 long",
+                "displayName": "T10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F6",
+                "longName": "Fach 6",
+                "displayName": "F6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K1",
+                "longName": "K2 long",
+                "displayName": "K1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K3",
+                "longName": "K4 long",
+                "displayName": "K3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K5",
+                "longName": "K6 long",
+                "displayName": "K5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K7",
+                "longName": "K8 long",
+                "displayName": "K7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K9",
+                "longName": "K10 long",
+                "displayName": "K9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-16",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1049, 1050],
+          "duration": {
+            "start": "2026-10-16T07:40",
+            "end": "2026-10-16T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "80ff00",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F5",
+                "longName": "Fach 5",
+                "displayName": "F5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1051, 1052],
+          "duration": {
+            "start": "2026-10-16T09:30",
+            "end": "2026-10-16T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0000a0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T1",
+                "longName": "T14 long",
+                "displayName": "T1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F8",
+                "longName": "Fach 8",
+                "displayName": "F8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-17",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-18",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-19",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1053, 1054],
+          "duration": {
+            "start": "2026-10-19T07:40",
+            "end": "2026-10-19T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "c0c0c0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T2",
+                "longName": "T3 long",
+                "displayName": "T2",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F1",
+                "longName": "Fach 1",
+                "displayName": "F1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": [
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K1",
+                "longName": "K2 long",
+                "displayName": "K1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1055, 1056],
+          "duration": {
+            "start": "2026-10-19T09:30",
+            "end": "2026-10-19T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0080c0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F13",
+                "longName": "Fach 13",
+                "displayName": "F13",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R3",
+                "longName": "R4 long",
+                "displayName": "R3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1057, 1058],
+          "duration": {
+            "start": "2026-10-19T11:20",
+            "end": "2026-10-19T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "ff8000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F10",
+                "longName": "Fach 10",
+                "displayName": "F10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R5",
+                "longName": "R6 long",
+                "displayName": "R5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-20",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1059, 1060],
+          "duration": {
+            "start": "2026-10-20T07:40",
+            "end": "2026-10-20T09:15"
+          },
+          "type": "ADDITIONAL_PERIOD",
+          "status": "CHANGED",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "ff0000",
+          "notesAll": "",
+          "icons": ["NOTES"],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F3",
+                "longName": "Fach 3",
+                "displayName": "F3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "ADDED",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": {
+                "type": "ROOM",
+                "status": "REMOVED",
+                "shortName": "R7",
+                "longName": "R8 long",
+                "displayName": "R7",
+                "displayNameLabel": "text 4"
+              }
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [
+            {
+              "type": "SUBSTITUTION_TEXT",
+              "text": "text 5"
+            }
+          ],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "text 5",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1061, 1062],
+          "duration": {
+            "start": "2026-10-20T09:30",
+            "end": "2026-10-20T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "80ffff",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T8",
+                "longName": "T9 long",
+                "displayName": "T8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F9",
+                "longName": "Fach 9",
+                "displayName": "F9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R9",
+                "longName": "R10 long",
+                "displayName": "R9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1063, 1064],
+          "duration": {
+            "start": "2026-10-20T11:20",
+            "end": "2026-10-20T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "80ff00",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F5",
+                "longName": "Fach 5",
+                "displayName": "F5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1065],
+          "duration": {
+            "start": "2026-10-20T12:50",
+            "end": "2026-10-20T13:45"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 4,
+          "color": "bfc8cf",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T10",
+                "longName": "T11 long",
+                "displayName": "T10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F6",
+                "longName": "Fach 6",
+                "displayName": "F6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K1",
+                "longName": "K2 long",
+                "displayName": "K1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K3",
+                "longName": "K4 long",
+                "displayName": "K3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K5",
+                "longName": "K6 long",
+                "displayName": "K5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K7",
+                "longName": "K8 long",
+                "displayName": "K7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K9",
+                "longName": "K10 long",
+                "displayName": "K9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1066],
+          "duration": {
+            "start": "2026-10-20T14:05",
+            "end": "2026-10-20T14:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 5,
+          "color": "8cc936",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F12",
+                "longName": "Fach 12",
+                "displayName": "F12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R11",
+                "longName": "R2 long",
+                "displayName": "R11",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-21",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1067],
+          "duration": {
+            "start": "2026-10-21T07:40",
+            "end": "2026-10-21T08:25"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "ff0000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F3",
+                "longName": "Fach 3",
+                "displayName": "F3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1068],
+          "duration": {
+            "start": "2026-10-21T08:30",
+            "end": "2026-10-21T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0000a0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T1",
+                "longName": "T14 long",
+                "displayName": "T1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F8",
+                "longName": "Fach 8",
+                "displayName": "F8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1069, 1070],
+          "duration": {
+            "start": "2026-10-21T09:30",
+            "end": "2026-10-21T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "ff80ff",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F2",
+                "longName": "Fach 2",
+                "displayName": "F2",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R12",
+                "longName": "R13 long",
+                "displayName": "R12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1071],
+          "duration": {
+            "start": "2026-10-21T11:20",
+            "end": "2026-10-21T12:05"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 4,
+          "color": "ff8000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F10",
+                "longName": "Fach 10",
+                "displayName": "F10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R5",
+                "longName": "R6 long",
+                "displayName": "R5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1072],
+          "duration": {
+            "start": "2026-10-21T12:05",
+            "end": "2026-10-21T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 5,
+          "color": "ffff80",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T4",
+                "longName": "T5 long",
+                "displayName": "T4",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F7",
+                "longName": "Fach 7",
+                "displayName": "F7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-22",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1073, 1074],
+          "duration": {
+            "start": "2026-10-22T07:40",
+            "end": "2026-10-22T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "ff0000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F3",
+                "longName": "Fach 3",
+                "displayName": "F3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1075, 1076],
+          "duration": {
+            "start": "2026-10-22T09:30",
+            "end": "2026-10-22T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "0000a0",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T1",
+                "longName": "T14 long",
+                "displayName": "T1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F8",
+                "longName": "Fach 8",
+                "displayName": "F8",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1077],
+          "duration": {
+            "start": "2026-10-22T12:50",
+            "end": "2026-10-22T13:45"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "bfc8cf",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T10",
+                "longName": "T11 long",
+                "displayName": "T10",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F6",
+                "longName": "Fach 6",
+                "displayName": "F6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K1",
+                "longName": "K2 long",
+                "displayName": "K1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K3",
+                "longName": "K4 long",
+                "displayName": "K3",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K5",
+                "longName": "K6 long",
+                "displayName": "K5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K7",
+                "longName": "K8 long",
+                "displayName": "K7",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            },
+            {
+              "current": {
+                "type": "CLASS",
+                "status": "REGULAR",
+                "shortName": "K9",
+                "longName": "K10 long",
+                "displayName": "K9",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-23",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "REGULAR",
+      "dayEntries": [],
+      "gridEntries": [
+        {
+          "ids": [1078, 1079],
+          "duration": {
+            "start": "2026-10-23T07:40",
+            "end": "2026-10-23T09:15"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 1,
+          "color": "80ff00",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T6",
+                "longName": "T7 long",
+                "displayName": "T6",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F5",
+                "longName": "Fach 5",
+                "displayName": "F5",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1080, 1081],
+          "duration": {
+            "start": "2026-10-23T09:30",
+            "end": "2026-10-23T11:00"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 2,
+          "color": "ff0000",
+          "notesAll": "",
+          "icons": [],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T12",
+                "longName": "T13 long",
+                "displayName": "T12",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F15",
+                "longName": "Fach 15",
+                "displayName": "F15",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R1",
+                "longName": "R2 long",
+                "displayName": "R1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        },
+        {
+          "ids": [1082, 1083],
+          "duration": {
+            "start": "2026-10-23T11:20",
+            "end": "2026-10-23T12:50"
+          },
+          "type": "NORMAL_TEACHING_PERIOD",
+          "status": "REGULAR",
+          "statusDetail": null,
+          "name": null,
+          "layoutStartPosition": 0,
+          "layoutWidth": 1000,
+          "layoutGroup": 3,
+          "color": "4da9ff",
+          "notesAll": "",
+          "icons": ["HOMEWORK"],
+          "position1": [
+            {
+              "current": {
+                "type": "TEACHER",
+                "status": "REGULAR",
+                "shortName": "T1",
+                "longName": "T14 long",
+                "displayName": "T1",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position2": [
+            {
+              "current": {
+                "type": "SUBJECT",
+                "status": "REGULAR",
+                "shortName": "F11",
+                "longName": "Fach 11",
+                "displayName": "F11",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position3": [
+            {
+              "current": {
+                "type": "ROOM",
+                "status": "REGULAR",
+                "shortName": "R16",
+                "longName": "R2 long",
+                "displayName": "R16",
+                "displayNameLabel": "text 4"
+              },
+              "removed": null
+            }
+          ],
+          "position4": null,
+          "position5": null,
+          "position6": null,
+          "position7": null,
+          "texts": [],
+          "lessonText": "",
+          "lessonInfo": null,
+          "substitutionText": "",
+          "userName": null,
+          "moved": null,
+          "durationTotal": null,
+          "link": null
+        }
+      ],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-24",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-25",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-26",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-27",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-28",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-29",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-30",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-10-31",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    },
+    {
+      "date": "2026-11-01",
+      "resourceType": "STUDENT",
+      "resource": {
+        "id": 1003,
+        "shortName": "Child",
+        "longName": "Child",
+        "displayName": ""
+      },
+      "status": "NO_DATA",
+      "dayEntries": [],
+      "gridEntries": [],
+      "backEntries": []
+    }
+  ],
+  "errors": []
+}

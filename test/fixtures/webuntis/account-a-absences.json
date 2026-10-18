@@ -1,0 +1,9 @@
+{
+  "data": {
+    "absences": [],
+    "absenceReasons": [],
+    "excuseStatuses": null,
+    "showAbsenceReasonChange": false,
+    "showCreateAbsence": true
+  }
+}

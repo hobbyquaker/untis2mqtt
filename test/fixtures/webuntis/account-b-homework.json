@@ -1,0 +1,141 @@
+{
+  "data": {
+    "records": [
+      {
+        "homeworkId": 1096,
+        "teacherId": 1097,
+        "elementIds": [1098]
+      },
+      {
+        "homeworkId": 1099,
+        "teacherId": 1097,
+        "elementIds": [1098]
+      },
+      {
+        "homeworkId": 1100,
+        "teacherId": 1097,
+        "elementIds": [1098]
+      }
+    ],
+    "homeworks": [
+      {
+        "id": 1099,
+        "lessonId": 1101,
+        "date": 20261013,
+        "dueDate": 20261019,
+        "text": "text 15",
+        "remark": "",
+        "completed": false,
+        "attachments": []
+      },
+      {
+        "id": 1096,
+        "lessonId": 1101,
+        "date": 20261012,
+        "dueDate": 20261013,
+        "text": "text 16",
+        "remark": "",
+        "completed": false,
+        "attachments": []
+      },
+      {
+        "id": 1100,
+        "lessonId": 1101,
+        "date": 20261006,
+        "dueDate": 20261012,
+        "text": "text 17",
+        "remark": "",
+        "completed": false,
+        "attachments": []
+      }
+    ],
+    "teachers": [
+      {
+        "id": 1097,
+        "name": "T17"
+      }
+    ],
+    "lessons": [
+      {
+        "id": 1102,
+        "subject": "F16",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1103,
+        "subject": "F17",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1104,
+        "subject": "F18",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1105,
+        "subject": "F3",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1106,
+        "subject": "F9",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1107,
+        "subject": "F19",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1108,
+        "subject": "F20",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1109,
+        "subject": "F10",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1110,
+        "subject": "F21",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1111,
+        "subject": "F22",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1101,
+        "subject": "F5",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1112,
+        "subject": "F23",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1113,
+        "subject": "",
+        "lessonType": "Bereitschaft"
+      },
+      {
+        "id": 1114,
+        "subject": "F13",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1115,
+        "subject": "F8",
+        "lessonType": "Unterricht"
+      },
+      {
+        "id": 1116,
+        "subject": "F24",
+        "lessonType": "Unterricht"
+      }
+    ]
+  }
+}

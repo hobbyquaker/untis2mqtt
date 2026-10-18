@@ -1,0 +1,122 @@
+{
+  "data": {
+    "absences": [
+      {
+        "id": 1084,
+        "startDate": 20260915,
+        "endDate": 20260915,
+        "startTime": 930,
+        "endTime": 1250,
+        "createDate": 1789460257275,
+        "lastUpdate": 1789466704644,
+        "createdUser": "text 6",
+        "updatedUser": "text 7",
+        "reasonId": 1085,
+        "reason": "",
+        "text": "",
+        "interruptions": [],
+        "canEdit": false,
+        "studentName": "text 8",
+        "excuseStatus": "entschuldigt",
+        "isExcused": true,
+        "excuse": {
+          "id": 1086,
+          "text": "text 9",
+          "excuseDate": 20260915,
+          "excuseStatus": "entschuldigt",
+          "isExcused": true,
+          "userId": 1087,
+          "username": "user"
+        }
+      },
+      {
+        "id": 1088,
+        "startDate": 20260928,
+        "endDate": 20260928,
+        "startTime": 740,
+        "endTime": 1805,
+        "createDate": 1790573980129,
+        "lastUpdate": 1790573980129,
+        "createdUser": "text 10",
+        "updatedUser": "text 10",
+        "reasonId": 1089,
+        "reason": "text 11",
+        "text": "text 12",
+        "interruptions": [],
+        "canEdit": false,
+        "studentName": "text 8",
+        "excuseStatus": "online entschuldigt",
+        "isExcused": true,
+        "excuse": {
+          "id": 1090,
+          "text": "",
+          "excuseDate": 20260928,
+          "excuseStatus": "online entschuldigt",
+          "isExcused": true,
+          "userId": 1091,
+          "username": "user"
+        }
+      },
+      {
+        "id": 1092,
+        "startDate": 20261006,
+        "endDate": 20261006,
+        "startTime": 740,
+        "endTime": 1805,
+        "createDate": 1791283735074,
+        "lastUpdate": 1791606567923,
+        "createdUser": "text 7",
+        "updatedUser": "text 6",
+        "reasonId": 1089,
+        "reason": "text 11",
+        "text": "text 13",
+        "interruptions": [],
+        "canEdit": false,
+        "studentName": "text 8",
+        "excuseStatus": "online entschuldigt",
+        "isExcused": true,
+        "excuse": {
+          "id": 1093,
+          "text": "",
+          "excuseDate": 20261010,
+          "excuseStatus": "online entschuldigt",
+          "isExcused": true,
+          "userId": 1087,
+          "username": "user"
+        }
+      },
+      {
+        "id": 1094,
+        "startDate": 20261009,
+        "endDate": 20261009,
+        "startTime": 740,
+        "endTime": 1805,
+        "createDate": 1791522018325,
+        "lastUpdate": 1791522018325,
+        "createdUser": "text 10",
+        "updatedUser": "text 10",
+        "reasonId": 1089,
+        "reason": "text 11",
+        "text": "text 14",
+        "interruptions": [],
+        "canEdit": false,
+        "studentName": "text 8",
+        "excuseStatus": "online entschuldigt",
+        "isExcused": true,
+        "excuse": {
+          "id": 1095,
+          "text": "",
+          "excuseDate": 20261009,
+          "excuseStatus": "online entschuldigt",
+          "isExcused": true,
+          "userId": 1091,
+          "username": "user"
+        }
+      }
+    ],
+    "absenceReasons": [],
+    "excuseStatuses": null,
+    "showAbsenceReasonChange": false,
+    "showCreateAbsence": true
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "currentSchoolYear": {
+    "dateRange": {
+      "start": "2026-09-14",
+      "end": "2027-07-28"
+    },
+    "id": 16,
+    "name": "2026/2027",
+    "timeGrid": {
+      "schoolyearId": 16,
+      "units": [
+        {
+          "endTime": 825,
+          "startTime": 740,
+          "unitOfDay": 1
+        },
+        {
+          "endTime": 915,
+          "startTime": 830,
+          "unitOfDay": 2
+        },
+        {
+          "endTime": 1015,
+          "startTime": 930,
+          "unitOfDay": 3
+        },
+        {
+          "endTime": 1100,
+          "startTime": 1015,
+          "unitOfDay": 4
+        },
+        {
+          "endTime": 1205,
+          "startTime": 1120,
+          "unitOfDay": 5
+        },
+        {
+          "endTime": 1250,
+          "startTime": 1205,
+          "unitOfDay": 6
+        },
+        {
+          "endTime": 1345,
+          "startTime": 1250,
+          "unitOfDay": 7
+        },
+        {
+          "endTime": 1450,
+          "startTime": 1405,
+          "unitOfDay": 8
+        },
+        {
+          "endTime": 1540,
+          "startTime": 1455,
+          "unitOfDay": 9
+        },
+        {
+          "endTime": 1630,
+          "startTime": 1545,
+          "unitOfDay": 10
+        },
+        {
+          "endTime": 1715,
+          "startTime": 1630,
+          "unitOfDay": 11
+        },
+        {
+          "endTime": 1805,
+          "startTime": 1720,
+          "unitOfDay": 12
+        }
+      ]
+    }
+  },
+  "departments": [],
+  "isPlayground": false,
+  "oneDriveData": {
+    "hasOneDriveRight": false,
+    "oneDriveClientVersion": "",
+    "oneDriveClientId": ""
+  },
+  "tenant": {
+    "displayName": "Example School",
+    "id": "1",
+    "wuHostName": null,
+    "name": "example"
+  },
+  "ui2020": true,
+  "user": {
+    "id": 1,
+    "locale": "de",
+    "name": "parent_b",
+    "email": "",
+    "permissions": {
+      "views": [
+        "TODAY",
+        "TIMETABLE_NEW_STUDENTS_MY",
+        "TIMETABLE_NEW_CLASSES",
+        "MESSAGE_CENTER",
+        "MESSAGE_CENTER_2021",
+        "PROFILE",
+        "STUDENTABSENCES",
+        "PERMISSION_STUDENT_TT_OWN",
+        "PERMISSION_CLASS_TT_OWN",
+        "PERMISSION_CLASS_TT_ALL",
+        "MY_DATA",
+        "STUDENT_HOMEWORK"
+      ]
+    },
+    "person": {
+      "displayName": "Parent B",
+      "id": 2,
+      "imageUrl": null
+    },
+    "roles": ["LEGAL_GUARDIAN"],
+    "students": [
+      {
+        "displayName": "Child B",
+        "id": 110,
+        "imageUrl": null
+      }
+    ],
+    "lastLogin": "2026-10-18T00:00:00Z"
+  },
+  "permissions": [
+    "CONTACTDETAILS:WR:0:ASSIGNED",
+    "TT_VIEW:R:1:ASSIGNED",
+    "TT_VIEW:R:5:ASSIGNED",
+    "MASTERDATA:R:12:ASSIGNED",
+    "HOMEWORK:R:0:ALL",
+    "STUDABS_REPORT:DCWR:0:ASSIGNED",
+    "MESSAGES:R:0:ALL",
+    "EXCUSE:WR:0:ALL",
+    "TT_OVERVIEW:R:1:ALL",
+    "TT_OVERVIEW:R:4:ALL",
+    "TT_DAY_OVERVIEW:R:1:ALL"
+  ],
+  "settings": ["system.linesperpage:100", "system.firstDayOfWeek:2", "system.showlessonsofday:false"],
+  "pollingJobs": [],
+  "isSupportAccessOpen": true,
+  "licenceExpiresAt": null,
+  "holidays": [
+    {
+      "id": 48,
+      "name": "Ferien1",
+      "start": "2021-11-01T00:00:00",
+      "end": "2021-11-07T23:59:59",
+      "bookable": false
+    },
+    {
+      "id": 53,
+      "name": "Ferien2",
+      "start": "2021-12-22T00:00:00",
+      "end": "2022-01-09T23:59:59",
+      "bookable": false
+    },
+    {
+      "id": 58,
+      "name": "Ferien3",
+      "start": "2022-02-26T00:00:00",
+      "end": "2022-03-06T23:59:59",
+      "bookable": false
+    },
+    {
+      "id": 63,
+      "name": "Ferien4",
+      "start": "2022-04-14T00:00:00",
+      "end": "2022-04-24T23:59:59",
+      "bookable": false
+    },
+    {
+      "id": 68,
+      "name": "Ferien5",
+      "start": "2022-05-27T00:00:00",
+      "end": "2022-05-27T23:59:59",
+      "bookable": false
+    },
+    {
+      "id": 73,
+      "name": "Ferien6",
+      "start": "2022-06-05T00:00:00",
+      "end": "2022-06-19T23:59:59",
+      "bookable": false
+    },
+    {
+      "id": 78,
+      "name": "26.5.",
+      "start": "2022-05-26T00:00:00",
+      "end": "2022-05-26T23:59:59",
+      "bookable": false
+    }
+  ]
+}
