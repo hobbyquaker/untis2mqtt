@@ -1,7 +1,6 @@
 {
   "name": "untis2mqtt",
   "version": "0.1.0",
-  "private": true,
   "description": "Interface between WebUntis school timetables and MQTT",
   "type": "module",
   "main": "index.js",

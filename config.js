@@ -9,19 +9,8 @@ import pkg from './package.json' with {type: 'json'};
  */
 export const DISCOVERY = {cloud: true, needs: ['school']};
 
-/** item groups --publish can switch; all on by default */
-export const GROUPS = [
-    'day',
-    'live',
-    'timetable',
-    'html',
-    'changes',
-    'alerts',
-    'homework',
-    'exams',
-    'absences',
-    'news',
-];
+/** item groups --publish can switch; all on by default (alerts, html, homework … follow in later releases) */
+export const GROUPS = ['day', 'live', 'timetable'];
 
 export const OPTIONS = {
     server: {
@@ -68,7 +57,7 @@ export const OPTIONS = {
     },
     'child-names': {
         type: 'string',
-        describe: 'what names a child in topics, html and alert texts',
+        describe: 'what names a child in topics',
         choices: ['nickname', 'firstname', 'fullname', 'id'],
         default: 'nickname',
     },
@@ -79,19 +68,13 @@ export const OPTIONS = {
     },
     days: {
         type: 'number',
-        describe: 'days ahead to fetch, watch for changes and publish',
+        describe: 'days ahead to fetch, for the next school day and the lessons to come',
         default: 14,
     },
     timezone: {
         type: 'string',
         describe: 'time zone of the school, for the offsets of the published times (a container often runs in UTC)',
         default: 'Europe/Berlin',
-    },
-    lang: {
-        type: 'string',
-        describe: 'language of the html output and the alert texts',
-        choices: ['de', 'en'],
-        default: 'de',
     },
     'poll-interval': {
         type: 'number',
@@ -108,11 +91,6 @@ export const OPTIONS = {
         describe: 'seconds between fetches from 22:00 to 05:30',
         default: 3600,
     },
-    'alert-bulk': {
-        type: 'number',
-        describe: 'more changes than this per child and fetch become one timetable_changed alert',
-        default: 8,
-    },
 };
 
 export default parseConfig({
@@ -120,6 +98,8 @@ export default parseConfig({
     options: OPTIONS,
     discovery: DISCOVERY,
     defaults: {name: 'untis'},
+    // no Home Assistant entities yet: discovery follows in a later release
+    publishesDiscovery: false,
     examples: [
         ['$0 --discover --school "Example School"', 'find the server and login name of a school'],
         ['$0 -s example.webuntis.com --school example --username parent -u mqtt://broker', 'run in the foreground'],
