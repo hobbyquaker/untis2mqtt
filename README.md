@@ -2,55 +2,54 @@
 
 [![mqtt-smarthome](https://img.shields.io/badge/mqtt-smarthome-blue.svg)](https://github.com/mqtt-smarthome/mqtt-smarthome)
 [![npm version](https://img.shields.io/npm/v/untis2mqtt.svg)](https://www.npmjs.com/package/untis2mqtt)
-[![CI](https://github.com/hobbyquaker/untis2mqtt/actions/workflows/ci.yml/badge.svg)](https://github.com/hobbyquaker/untis2mqtt/actions/workflows/ci.yml)
 [![License][mit-badge]][mit-url]
 
-> School timetables from WebUntis via MQTT — when the first lesson starts and the last one ends,
-> today, tomorrow and on the next school day, and every lesson of the day as JSON.
+> Stundenpläne aus WebUntis über MQTT — wann die erste Stunde beginnt und die letzte endet, heute, morgen
+> und am nächsten Schultag, und jede Stunde des Tages als JSON.
 
-[Deutsch](README.de.md)
+[English](README.en.md)
 
-Built on [mqtt-interfaces-core](https://github.com/hobbyquaker/mqtt-interfaces-core), following the
-[mqtt-smarthome](https://github.com/mqtt-smarthome/mqtt-smarthome) architecture, with a systemd installer
-and a Docker image — like the other `xyz2mqtt` adapters.
+Gebaut auf [mqtt-interfaces-core](https://github.com/hobbyquaker/mqtt-interfaces-core) nach der
+[mqtt-smarthome](https://github.com/mqtt-smarthome/mqtt-smarthome)-Architektur, mit systemd-Installer und
+Docker-Image — wie die anderen `xyz2mqtt`-Adapter.
 
-**0.x is a preview.** The topics below are what 0.1 publishes; alerts on cancelled and substituted lessons,
-an HTML view for dashboards, homework and absences, and Home Assistant discovery follow in later
-releases. Topics may still change before 1.0.
+**0.x ist eine Vorschau.** Die Topics unten sind das, was 0.1 veröffentlicht; Benachrichtigungen bei
+Ausfall und Vertretung, eine HTML-Ansicht für Dashboards, Hausaufgaben und Fehlzeiten sowie Home-Assistant-
+Discovery folgen in späteren Versionen. Bis 1.0 können sich Topics noch ändern.
 
-## What it is for
+## Wofür
 
-- a wake-up alarm that follows the timetable: `untis/status/<child>/next/start` is the first lesson of the next
-  school day that actually takes place — a cancelled first lesson moves it, a holiday skips the day;
-- "leave the house", "pick up at", heating or lights by `today/start` and `today/end`;
-- one alarm for the whole household: `untis/status/all/next/start` is the earliest of all children;
-- dashboards and scripts: the day's lessons as a JSON array, the current and the next lesson.
+- ein Wecker, der dem Stundenplan folgt: `untis/status/<kind>/next/start` ist die erste Stunde des nächsten
+  Schultags, die tatsächlich stattfindet — eine ausfallende erste Stunde verschiebt ihn, Ferien überspringt er;
+- "Aus dem Haus", "Abholen um", Heizung oder Licht nach `today/start` und `today/end`;
+- ein Wecker für den ganzen Haushalt: `untis/status/all/next/start` ist der früheste Beginn aller Kinder;
+- Dashboards und Skripte: die Stunden des Tages als JSON-Array, die laufende und die nächste Stunde.
 
-## Install
+## Installation
 
 ```
 sudo npm install -g untis2mqtt
 ```
 
-Find your school's server and login name:
+Server und Login-Namen der Schule finden:
 
 ```
-$ untis2mqtt --discover --school "name or town of the school"
-example.webuntis.com  --school example-school  Example School  (12345, Town, Street 1)
+$ untis2mqtt --discover --school "Name oder Ort der Schule"
+example.webuntis.com  --school example-school  Beispielschule  (12345, Ort, Straße 1)
 ```
 
-Then run it with your WebUntis login (a parent or a student account):
+Dann mit dem WebUntis-Login starten (Eltern- oder Schülerzugang):
 
 ```
-untis2mqtt -s example.webuntis.com --school example-school --username <user> --password <password> -u mqtt://broker
+untis2mqtt -s example.webuntis.com --school example-school --username <benutzer> --password <passwort> -u mqtt://broker
 ```
 
-As a systemd service (creates `untis2mqtt@untis`, an unprivileged user, and `/etc/untis2mqtt/untis.env` with
-the options):
+Als systemd-Dienst (legt `untis2mqtt@untis`, einen eigenen Benutzer und `/etc/untis2mqtt/untis.env` mit den
+Optionen an):
 
 ```
 sudo untis2mqtt --install -n untis -s example.webuntis.com --school example-school \
-    --username <user> --password <password> -u mqtt://broker
+    --username <benutzer> --password <passwort> -u mqtt://broker
 ```
 
 Docker:
@@ -58,81 +57,81 @@ Docker:
 ```
 docker run -d --name untis2mqtt \
     -e UNTIS2MQTT_MQTT_URL=mqtt://broker -e UNTIS2MQTT_SERVER=example.webuntis.com \
-    -e UNTIS2MQTT_SCHOOL=example-school -e UNTIS2MQTT_USERNAME=<user> -e UNTIS2MQTT_PASSWORD=<password> \
+    -e UNTIS2MQTT_SCHOOL=example-school -e UNTIS2MQTT_USERNAME=<benutzer> -e UNTIS2MQTT_PASSWORD=<passwort> \
     ghcr.io/hobbyquaker/untis2mqtt
 ```
 
-### Several accounts
+### Mehrere Accounts
 
-Parents often have one WebUntis account per child. Put them into one JSON file and pass it with
-`--accounts-file`; all children then share one instance and one topic tree:
+Eltern haben oft einen WebUntis-Zugang pro Kind. Diese kommen in eine JSON-Datei, die mit `--accounts-file`
+übergeben wird; alle Kinder teilen sich dann eine Instanz und einen Topic-Baum:
 
 ```json
 [
-  {"username": "parent_child1", "password": "…"},
-  {"username": "parent_child2", "password": "…"}
+  {"username": "eltern_kind1", "password": "…"},
+  {"username": "eltern_kind2", "password": "…"}
 ]
 ```
 
-Keep the file readable for the service only (`/etc/untis2mqtt/`, mode `0640`, group `untis2mqtt`).
+Die Datei sollte nur für den Dienst lesbar sein (`/etc/untis2mqtt/`, Modus `0640`, Gruppe `untis2mqtt`).
 
-### Schools with single sign-on
+### Schulen mit Single Sign-on
 
-If you log in to WebUntis through IServ, Office 365 or similar, there is no WebUntis password. Use the app
-secret instead: in WebUntis open your profile → Data access ("Freigaben") → show the QR code for the app; the
-`key=` part of the link behind it is the secret. Pass it as `--secret` (or `"secret"` in the accounts file)
-instead of the password.
+Wer sich über IServ, Office 365 o. ä. bei WebUntis anmeldet, hat kein WebUntis-Passwort. Dann wird das
+App-Secret verwendet: in WebUntis das Profil öffnen → Freigaben → den QR-Code für die App anzeigen; der
+`key=`-Teil des Links dahinter ist das Secret. Es wird als `--secret` (oder `"secret"` in der Account-Datei)
+statt des Passworts angegeben.
 
-## Options
+## Optionen
 
-| Option                     | Default         |                                                                                  |
-| -------------------------- | --------------- | -------------------------------------------------------------------------------- |
-| `-s, --server`             | —               | WebUntis server of the school (see `--discover`)                                 |
-| `--school`                 | —               | login name of the school; with `--discover` the name or town to search for       |
-| `--username`, `--password` | —               | one WebUntis login                                                               |
-| `--secret`                 | —               | the app secret instead of the password (single sign-on)                          |
-| `--accounts-file`          | —               | JSON file with several logins (see above)                                        |
-| `--child`                  | —               | a nickname per child: `--child 1234=anna 5678=ben` (the ids are logged on start) |
-| `--child-names`            | `nickname`      | what names a child in the topics: `nickname`, `firstname`, `fullname` or `id`    |
-| `--publish`                | all             | item groups to publish: `day`, `live`, `timetable`                               |
-| `--days`                   | `14`            | days ahead to fetch                                                              |
-| `--timezone`               | `Europe/Berlin` | time zone of the school, for the published times                                 |
-| `--poll-interval`          | `900`           | seconds between fetches during the day                                           |
-| `--poll-interval-morning`  | `300`           | seconds between fetches 06:00–08:00 on school days                               |
-| `--poll-interval-night`    | `3600`          | seconds between fetches 22:00–05:30                                              |
+| Option                     | Standard        |                                                                                         |
+| -------------------------- | --------------- | --------------------------------------------------------------------------------------- |
+| `-s, --server`             | —               | WebUntis-Server der Schule (siehe `--discover`)                                         |
+| `--school`                 | —               | Login-Name der Schule; mit `--discover` der gesuchte Name oder Ort                      |
+| `--username`, `--password` | —               | ein WebUntis-Login                                                                      |
+| `--secret`                 | —               | das App-Secret statt des Passworts (Single Sign-on)                                     |
+| `--accounts-file`          | —               | JSON-Datei mit mehreren Logins (siehe oben)                                             |
+| `--child`                  | —               | ein Spitzname pro Kind: `--child 1234=anna 5678=ben` (die IDs stehen beim Start im Log) |
+| `--child-names`            | `nickname`      | wie ein Kind in den Topics heißt: `nickname`, `firstname`, `fullname` oder `id`         |
+| `--publish`                | alle            | zu veröffentlichende Gruppen: `day`, `live`, `timetable`                                |
+| `--days`                   | `14`            | wie viele Tage im Voraus abgerufen werden                                               |
+| `--timezone`               | `Europe/Berlin` | Zeitzone der Schule, für die veröffentlichten Zeiten                                    |
+| `--poll-interval`          | `900`           | Sekunden zwischen den Abrufen tagsüber                                                  |
+| `--poll-interval-morning`  | `300`           | Sekunden zwischen den Abrufen 6:00–8:00 an Schultagen                                   |
+| `--poll-interval-night`    | `3600`          | Sekunden zwischen den Abrufen 22:00–5:30                                                |
 
-Plus the options every `xyz2mqtt` adapter has (`-u` broker url, `-n` name, `--json-payloads`, `-v`, `--install`,
-…): `untis2mqtt --help`. Every option can also be given as an environment variable, `UNTIS2MQTT_<OPTION>`.
+Dazu die Optionen, die jeder `xyz2mqtt`-Adapter hat (`-u` Broker-URL, `-n` Name, `--json-payloads`, `-v`,
+`--install`, …): `untis2mqtt --help`. Jede Option geht auch als Umgebungsvariable `UNTIS2MQTT_<OPTION>`.
 
 ## Topics
 
-`untis` is the default instance name (`-n`). Status topics are retained and carry
-`{"val": …, "ts": …, "lc": …}` (or the plain value with `--no-json-payloads`). Times are ISO 8601 with the
-school's offset, dates are ISO dates, `null` means "none" (no first lesson on a day off).
+`untis` ist der Standard-Instanzname (`-n`). Status-Topics sind retained und tragen `{"val": …, "ts": …, "lc": …}`
+(oder den reinen Wert mit `--no-json-payloads`). Zeiten sind ISO 8601 mit dem Zeitversatz der Schule, Daten
+sind ISO-Daten, `null` heißt "keins" (keine erste Stunde an einem freien Tag).
 
-| Topic                                                     | Value                                                                          |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| `untis/connected`                                         | `2` while WebUntis answers, `1` when it does not, `0` when the adapter is down |
-| `untis/status/<child>/<day>/date`                         | `"2026-10-19"`                                                                 |
-| `untis/status/<child>/<day>/school`                       | `true` if at least one lesson takes place                                      |
-| `untis/status/<child>/<day>/start`                        | first lesson that takes place, `"2026-10-19T07:40:00+02:00"`                   |
-| `untis/status/<child>/<day>/end`                          | last lesson that takes place                                                   |
-| `untis/status/<child>/<day>/start_planned`, `end_planned` | the same per the regular timetable (cancelled lessons count)                   |
-| `untis/status/<child>/<day>/lessons`                      | number of lessons that take place                                              |
-| `untis/status/<child>/<day>/changes`                      | number of cancelled, changed, extra or moved lessons                           |
-| `untis/status/<child>/<day>/timetable`                    | all lessons of the day as a JSON array (below)                                 |
-| `untis/status/<child>/in_school`                          | `true` between today's first and last lesson                                   |
-| `untis/status/<child>/now`                                | the lesson taking place now, or `null`                                         |
-| `untis/status/<child>/next_lesson`                        | the next lesson that takes place                                               |
-| `untis/status/<child>/last_update`                        | time of the last successful fetch                                              |
-| `untis/status/all/<day>/…`                                | with several children: earliest start, latest end, school if any child has     |
-| `untis/set/refresh`                                       | fetch now                                                                      |
+| Topic                                                    | Wert                                                                                           |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `untis/connected`                                        | `2` solange WebUntis antwortet, `1` wenn nicht, `0` wenn der Adapter nicht läuft               |
+| `untis/status/<kind>/<tag>/date`                         | `"2026-10-19"`                                                                                 |
+| `untis/status/<kind>/<tag>/school`                       | `true`, wenn mindestens eine Stunde stattfindet                                                |
+| `untis/status/<kind>/<tag>/start`                        | erste Stunde, die stattfindet, `"2026-10-19T07:40:00+02:00"`                                   |
+| `untis/status/<kind>/<tag>/end`                          | letzte Stunde, die stattfindet                                                                 |
+| `untis/status/<kind>/<tag>/start_planned`, `end_planned` | dasselbe laut regulärem Stundenplan (ausfallende Stunden zählen mit)                           |
+| `untis/status/<kind>/<tag>/lessons`                      | Anzahl der Stunden, die stattfinden                                                            |
+| `untis/status/<kind>/<tag>/changes`                      | Anzahl ausfallender, geänderter, zusätzlicher oder verlegter Stunden                           |
+| `untis/status/<kind>/<tag>/timetable`                    | alle Stunden des Tages als JSON-Array (unten)                                                  |
+| `untis/status/<kind>/in_school`                          | `true` zwischen der ersten und letzten Stunde von heute                                        |
+| `untis/status/<kind>/now`                                | die Stunde, die gerade läuft, oder `null`                                                      |
+| `untis/status/<kind>/next_lesson`                        | die nächste Stunde, die stattfindet                                                            |
+| `untis/status/<kind>/last_update`                        | Zeit des letzten erfolgreichen Abrufs                                                          |
+| `untis/status/all/<tag>/…`                               | bei mehreren Kindern: frühester Beginn, spätestes Ende, Schule, wenn irgendein Kind Schule hat |
+| `untis/set/refresh`                                      | jetzt abrufen                                                                                  |
 
-`<day>` is `today`, `tomorrow` or `next` — the next school day that is not over yet: after the last lesson it
-moves on, and it skips weekends, holidays and days on which every lesson is cancelled. Within `--days` without
-a school day, `next/date` is `null` and `next/school` is `false`.
+`<tag>` ist `today`, `tomorrow` oder `next` — der nächste Schultag, der noch nicht vorbei ist: nach der
+letzten Stunde rückt er weiter, und er überspringt Wochenenden, Ferien und Tage, an denen alles ausfällt. Gibt
+es innerhalb von `--days` keinen Schultag, ist `next/date` `null` und `next/school` `false`.
 
-A lesson:
+Eine Stunde:
 
 ```json
 {
@@ -155,55 +154,57 @@ A lesson:
 }
 ```
 
-`status` is `regular`, `changed`, `cancelled`, `additional`, `exam` or `event`; `periods` are the periods of
-the school's time grid the lesson covers (a double lesson has two).
+`status` ist `regular`, `changed`, `cancelled`, `additional`, `exam` oder `event`; `periods` sind die Stunden
+des Zeitrasters der Schule, die die Stunde abdeckt (eine Doppelstunde hat zwei).
 
-### Examples
+### Beispiele
 
-A wake-up time 70 minutes before the first lesson, in she (`smart-home-engine`):
+Weckzeit 70 Minuten vor der ersten Stunde, in she (`smart-home-engine`):
 
 ```js
 she.mqtt.sub('untis/status/anna/next/start', {change: true}, (topic, val) => {
-  if (!val) return; // no school day ahead
+  if (!val) return; // kein Schultag in Sicht
   const wake = new Date(Date.parse(val) - 70 * 60 * 1000);
-  she.log('wake up at', wake.toLocaleTimeString());
+  she.log('Wecken um', wake.toLocaleTimeString());
 });
 ```
 
-In Home Assistant, until discovery arrives, a sensor by hand:
+In Home Assistant, bis die Discovery kommt, ein Sensor von Hand:
 
 ```yaml
 mqtt:
   sensor:
-    - name: Anna school starts
+    - name: Anna Schulbeginn
       state_topic: untis/status/anna/next/start
       value_template: '{{ value_json.val }}'
       device_class: timestamp
 ```
 
-## Privacy
+## Datenschutz
 
-The children's timetables end up on your broker, retained: subjects, teachers' abbreviations, rooms. Restrict
-who may read `untis/#` with your broker's ACLs. Children are published under a nickname or `student_<id>` by
-default; their real names appear only with `--child-names firstname` or `fullname`. The login is read from
-the options or the accounts file and never logged.
+Die Stundenpläne der Kinder landen retained auf dem Broker: Fächer, Lehrerkürzel, Räume. Wer `untis/#` lesen
+darf, sollte über die ACLs des Brokers geregelt werden. Kinder erscheinen standardmäßig unter einem Spitznamen
+oder als `student_<id>`; ihre echten Namen nur mit `--child-names firstname` oder `fullname`. Die Zugangsdaten
+kommen aus den Optionen oder der Account-Datei und werden nie geloggt.
 
-## How it works
+## Wie es funktioniert
 
-WebUntis has no public API for parents and students. untis2mqtt talks to the interface the WebUntis web app
-itself uses (a login, then the app's REST API), like other WebUntis tools do. Untis may change it without
-notice; it is kept in one module (`lib/untis.js`) so a change can be followed quickly.
+WebUntis hat keine öffentliche Schnittstelle für Eltern und Schüler. untis2mqtt nutzt die Schnittstelle, die
+die WebUntis-Web-App selbst verwendet (ein Login, dann die REST-API der App), wie andere WebUntis-Werkzeuge
+auch. Untis kann sie ohne Ankündigung ändern; sie steckt in einem Modul (`lib/untis.js`), damit eine Änderung
+schnell nachgezogen werden kann.
 
-## Credits
+## Danke
 
-The WebUntis client follows [MMM-Webuntis](https://github.com/HeikoGr/MMM-Webuntis) (MIT) by HeikoGr, whose
-handling of the web app's interface — the login, the token, sessions that end with a login page — showed the way.
+Der WebUntis-Client folgt [MMM-Webuntis](https://github.com/HeikoGr/MMM-Webuntis) (MIT) von HeikoGr, dessen
+Umgang mit der Schnittstelle der Web-App — Login, Token, Sitzungen, die mit einer Login-Seite enden — den Weg
+gezeigt hat.
 
-## License
+## Lizenz
 
 MIT © [Sebastian Raff](https://github.com/hobbyquaker)
 
-untis2mqtt is not affiliated with Untis GmbH.
+untis2mqtt steht in keiner Verbindung zur Untis GmbH.
 
 [mit-badge]: https://img.shields.io/badge/License-MIT-blue.svg?style=flat
 [mit-url]: LICENSE

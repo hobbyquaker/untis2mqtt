@@ -14,7 +14,7 @@
     "lib/",
     "example-accounts.json",
     "accounts.schema.json",
-    "README.de.md"
+    "README.en.md"
   ],
   "engines": {
     "node": "^20.19 || ^22.12 || >=24"
