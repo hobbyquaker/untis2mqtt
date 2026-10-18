@@ -13,7 +13,8 @@
     "config.js",
     "lib/",
     "example-accounts.json",
-    "accounts.schema.json"
+    "accounts.schema.json",
+    "README.de.md"
   ],
   "engines": {
     "node": "^20.19 || ^22.12 || >=24"

@@ -8,6 +8,8 @@
 > School timetables from WebUntis via MQTT — when the first lesson starts and the last one ends,
 > today, tomorrow and on the next school day, and every lesson of the day as JSON.
 
+[Deutsch](README.de.md)
+
 Built on [mqtt-interfaces-core](https://github.com/hobbyquaker/mqtt-interfaces-core), following the
 [mqtt-smarthome](https://github.com/mqtt-smarthome/mqtt-smarthome) architecture, with a systemd installer
 and a Docker image — like the other `xyz2mqtt` adapters.
