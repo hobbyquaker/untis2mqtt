@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0
+
+- **Week topics** for dashboards: `<child>/week`, the week of the next school day (after Friday's last
+  lesson the following one), and `<child>/week/next`, the week after — the Monday and the days Monday to
+  Friday (Saturday and Sunday when they have lessons), each with its summary and its lessons. The
+  timetable is fetched for at least 21 days for them.
+- untis2mqtt publishes data only; views belong to the dashboards (a feezal widget is planned).
+
+**Upgrading an installed 0.1.0 or 0.2.0:** add `week` to `UNTIS2MQTT_PUBLISH` in `/etc/untis2mqtt/<name>.env`, or
+delete the line to publish all groups.
+
 ## 0.2.0
 
 Everything else WebUntis gives a parent or student account, each on a JSON topic of its own.

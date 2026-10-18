@@ -84,21 +84,21 @@ instead of the password.
 
 ## Options
 
-| Option                     | Default         |                                                                                                           |
-| -------------------------- | --------------- | --------------------------------------------------------------------------------------------------------- |
-| `-s, --server`             | —               | WebUntis server of the school (see `--discover`)                                                          |
-| `--school`                 | —               | login name of the school; with `--discover` the name or town to search for                                |
-| `--username`, `--password` | —               | one WebUntis login                                                                                        |
-| `--secret`                 | —               | the app secret instead of the password (single sign-on)                                                   |
-| `--accounts-file`          | —               | JSON file with several logins (see above)                                                                 |
-| `--child`                  | —               | a nickname per child: `--child 1234=anna 5678=ben` (the ids are logged on start)                          |
-| `--child-names`            | `nickname`      | what names a child in the topics: `nickname`, `firstname`, `fullname` or `id`                             |
-| `--publish`                | all             | item groups to publish: `day`, `live`, `timetable`, `homework`, `exams`, `absences`, `messages`, `school` |
-| `--days`                   | `14`            | days ahead to fetch                                                                                       |
-| `--timezone`               | `Europe/Berlin` | time zone of the school, for the published times                                                          |
-| `--poll-interval`          | `900`           | seconds between fetches during the day                                                                    |
-| `--poll-interval-morning`  | `300`           | seconds between fetches 06:00–08:00 on school days                                                        |
-| `--poll-interval-night`    | `3600`          | seconds between fetches 22:00–05:30                                                                       |
+| Option                     | Default         |                                                                                                                   |
+| -------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `-s, --server`             | —               | WebUntis server of the school (see `--discover`)                                                                  |
+| `--school`                 | —               | login name of the school; with `--discover` the name or town to search for                                        |
+| `--username`, `--password` | —               | one WebUntis login                                                                                                |
+| `--secret`                 | —               | the app secret instead of the password (single sign-on)                                                           |
+| `--accounts-file`          | —               | JSON file with several logins (see above)                                                                         |
+| `--child`                  | —               | a nickname per child: `--child 1234=anna 5678=ben` (the ids are logged on start)                                  |
+| `--child-names`            | `nickname`      | what names a child in the topics: `nickname`, `firstname`, `fullname` or `id`                                     |
+| `--publish`                | all             | item groups to publish: `day`, `live`, `timetable`, `week`, `homework`, `exams`, `absences`, `messages`, `school` |
+| `--days`                   | `14`            | days ahead for homework and the next school day (the timetable is fetched for at least 21 days)                   |
+| `--timezone`               | `Europe/Berlin` | time zone of the school, for the published times                                                                  |
+| `--poll-interval`          | `900`           | seconds between fetches during the day                                                                            |
+| `--poll-interval-morning`  | `300`           | seconds between fetches 06:00–08:00 on school days                                                                |
+| `--poll-interval-night`    | `3600`          | seconds between fetches 22:00–05:30                                                                               |
 
 Plus the options every `xyz2mqtt` adapter has (`-u` broker url, `-n` name, `--json-payloads`, `-v`, `--install`,
 …): `untis2mqtt --help`. Every option can also be given as an environment variable, `UNTIS2MQTT_<OPTION>`.
@@ -109,37 +109,39 @@ Plus the options every `xyz2mqtt` adapter has (`-u` broker url, `-n` name, `--js
 `{"val": …, "ts": …, "lc": …}` (or the plain value with `--no-json-payloads`). Times are ISO 8601 with the
 school's offset, dates are ISO dates, `null` means "none" (no first lesson on a day off).
 
-| Topic                                                     | Value                                                                          |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| `untis/connected`                                         | `2` while WebUntis answers, `1` when it does not, `0` when the adapter is down |
-| `untis/status/<child>/<day>/date`                         | `"2026-10-19"`                                                                 |
-| `untis/status/<child>/<day>/school`                       | `true` if at least one lesson takes place                                      |
-| `untis/status/<child>/<day>/start`                        | first lesson that takes place, `"2026-10-19T07:40:00+02:00"`                   |
-| `untis/status/<child>/<day>/end`                          | last lesson that takes place                                                   |
-| `untis/status/<child>/<day>/start_planned`, `end_planned` | the same per the regular timetable (cancelled lessons count)                   |
-| `untis/status/<child>/<day>/lessons`                      | number of lessons that take place                                              |
-| `untis/status/<child>/<day>/changes`                      | number of cancelled, changed, extra or moved lessons                           |
-| `untis/status/<child>/<day>/timetable`                    | all lessons of the day as a JSON array (below)                                 |
-| `untis/status/<child>/in_school`                          | `true` between today's first and last lesson                                   |
-| `untis/status/<child>/now`                                | the lesson taking place now, or `null`                                         |
-| `untis/status/<child>/next_lesson`                        | the next lesson that takes place                                               |
-| `untis/status/<child>/last_update`                        | time of the last successful fetch                                              |
-| `untis/status/all/<day>/…`                                | with several children: earliest start, latest end, school if any child has     |
-| `untis/status/<child>/homework`                           | homework from two weeks back to `--days` ahead (JSON array, below)             |
-| `untis/status/<child>/homework/open`                      | number of open homework (not done, not overdue)                                |
-| `untis/status/<child>/homework/due_tomorrow`              | number of open homework due tomorrow                                           |
-| `untis/status/<child>/exams`                              | exams in the range (JSON array)                                                |
-| `untis/status/<child>/exams/next`                         | the next exam or `null`                                                        |
-| `untis/status/<child>/absences`                           | the school year's absences (JSON array, below)                                 |
-| `untis/status/<child>/absences/count`                     | number of absences                                                             |
-| `untis/status/<child>/absences/unexcused`                 | number of absences not excused                                                 |
-| `untis/status/<child>/messages`                           | the account's WebUntis inbox (list with previews)                              |
-| `untis/status/<child>/messages/unread`                    | number of unread messages                                                      |
-| `untis/status/school/school_year`                         | school year: name, start, end                                                  |
-| `untis/status/school/time_grid`                           | time grid: period, start, end                                                  |
-| `untis/status/school/holidays`                            | holidays to come as WebUntis lists them (name, start, end)                     |
-| `untis/status/school/news`                                | the school's messages of the day                                               |
-| `untis/set/refresh`                                       | fetch now                                                                      |
+| Topic                                                     | Value                                                                                                        |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `untis/connected`                                         | `2` while WebUntis answers, `1` when it does not, `0` when the adapter is down                               |
+| `untis/status/<child>/<day>/date`                         | `"2026-10-19"`                                                                                               |
+| `untis/status/<child>/<day>/school`                       | `true` if at least one lesson takes place                                                                    |
+| `untis/status/<child>/<day>/start`                        | first lesson that takes place, `"2026-10-19T07:40:00+02:00"`                                                 |
+| `untis/status/<child>/<day>/end`                          | last lesson that takes place                                                                                 |
+| `untis/status/<child>/<day>/start_planned`, `end_planned` | the same per the regular timetable (cancelled lessons count)                                                 |
+| `untis/status/<child>/<day>/lessons`                      | number of lessons that take place                                                                            |
+| `untis/status/<child>/<day>/changes`                      | number of cancelled, changed, extra or moved lessons                                                         |
+| `untis/status/<child>/<day>/timetable`                    | all lessons of the day as a JSON array (below)                                                               |
+| `untis/status/<child>/in_school`                          | `true` between today's first and last lesson                                                                 |
+| `untis/status/<child>/now`                                | the lesson taking place now, or `null`                                                                       |
+| `untis/status/<child>/next_lesson`                        | the next lesson that takes place                                                                             |
+| `untis/status/<child>/last_update`                        | time of the last successful fetch                                                                            |
+| `untis/status/all/<day>/…`                                | with several children: earliest start, latest end, school if any child has                                   |
+| `untis/status/<child>/week`                               | the week of the next school day (after Friday's last lesson the following one): `{"monday", "days": [day…]}` |
+| `untis/status/<child>/week/next`                          | the week after                                                                                               |
+| `untis/status/<child>/homework`                           | homework from two weeks back to `--days` ahead (JSON array, below)                                           |
+| `untis/status/<child>/homework/open`                      | number of open homework (not done, not overdue)                                                              |
+| `untis/status/<child>/homework/due_tomorrow`              | number of open homework due tomorrow                                                                         |
+| `untis/status/<child>/exams`                              | exams in the range (JSON array)                                                                              |
+| `untis/status/<child>/exams/next`                         | the next exam or `null`                                                                                      |
+| `untis/status/<child>/absences`                           | the school year's absences (JSON array, below)                                                               |
+| `untis/status/<child>/absences/count`                     | number of absences                                                                                           |
+| `untis/status/<child>/absences/unexcused`                 | number of absences not excused                                                                               |
+| `untis/status/<child>/messages`                           | the account's WebUntis inbox (list with previews)                                                            |
+| `untis/status/<child>/messages/unread`                    | number of unread messages                                                                                    |
+| `untis/status/school/school_year`                         | school year: name, start, end                                                                                |
+| `untis/status/school/time_grid`                           | time grid: period, start, end                                                                                |
+| `untis/status/school/holidays`                            | holidays to come as WebUntis lists them (name, start, end)                                                   |
+| `untis/status/school/news`                                | the school's messages of the day                                                                             |
+| `untis/set/refresh`                                       | fetch now                                                                                                    |
 
 `<day>` is `today`, `tomorrow` or `next` — the next school day that is not over yet: after the last lesson it
 moves on, and it skips weekends, holidays and days on which every lesson is cancelled. Within `--days` without
@@ -174,6 +176,10 @@ A lesson:
 `status` is `regular`, `changed`, `cancelled`, `additional`, `exam` or `event`; `periods` are the periods of
 the school's time grid the lesson covers (a double lesson has two); `notes` the note for everyone, `homework`
 whether homework is entered for the lesson, `color` the subject's colour in WebUntis.
+
+A day in `week/…`: the fields of the day topics (`date`, `school`, `start`, `end`, `start_planned`,
+`end_planned`, `lessons`, `changes`, `holiday`) and `timetable` with its lessons. Monday to Friday, Saturday and
+Sunday only when they have lessons — meant for week views in dashboards.
 
 Homework: `{"assigned", "due", "subject", "teacher", "text", "remark", "completed", "attachments"}`. An absence:
 `{"date", "start", "end", "reason", "text", "excused", "excuse_status"}`. A message: `{"sent", "subject",

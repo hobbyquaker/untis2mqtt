@@ -83,21 +83,21 @@ statt des Passworts angegeben.
 
 ## Optionen
 
-| Option                     | Standard        |                                                                                                                 |
-| -------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
-| `-s, --server`             | —               | WebUntis-Server der Schule (siehe `--discover`)                                                                 |
-| `--school`                 | —               | Login-Name der Schule; mit `--discover` der gesuchte Name oder Ort                                              |
-| `--username`, `--password` | —               | ein WebUntis-Login                                                                                              |
-| `--secret`                 | —               | das App-Secret statt des Passworts (Single Sign-on)                                                             |
-| `--accounts-file`          | —               | JSON-Datei mit mehreren Logins (siehe oben)                                                                     |
-| `--child`                  | —               | ein Spitzname pro Kind: `--child 1234=anna 5678=ben` (die IDs stehen beim Start im Log)                         |
-| `--child-names`            | `nickname`      | wie ein Kind in den Topics heißt: `nickname`, `firstname`, `fullname` oder `id`                                 |
-| `--publish`                | alle            | zu veröffentlichende Gruppen: `day`, `live`, `timetable`, `homework`, `exams`, `absences`, `messages`, `school` |
-| `--days`                   | `14`            | wie viele Tage im Voraus abgerufen werden                                                                       |
-| `--timezone`               | `Europe/Berlin` | Zeitzone der Schule, für die veröffentlichten Zeiten                                                            |
-| `--poll-interval`          | `900`           | Sekunden zwischen den Abrufen tagsüber                                                                          |
-| `--poll-interval-morning`  | `300`           | Sekunden zwischen den Abrufen 6:00–8:00 an Schultagen                                                           |
-| `--poll-interval-night`    | `3600`          | Sekunden zwischen den Abrufen 22:00–5:30                                                                        |
+| Option                     | Standard        |                                                                                                                         |
+| -------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `-s, --server`             | —               | WebUntis-Server der Schule (siehe `--discover`)                                                                         |
+| `--school`                 | —               | Login-Name der Schule; mit `--discover` der gesuchte Name oder Ort                                                      |
+| `--username`, `--password` | —               | ein WebUntis-Login                                                                                                      |
+| `--secret`                 | —               | das App-Secret statt des Passworts (Single Sign-on)                                                                     |
+| `--accounts-file`          | —               | JSON-Datei mit mehreren Logins (siehe oben)                                                                             |
+| `--child`                  | —               | ein Spitzname pro Kind: `--child 1234=anna 5678=ben` (die IDs stehen beim Start im Log)                                 |
+| `--child-names`            | `nickname`      | wie ein Kind in den Topics heißt: `nickname`, `firstname`, `fullname` oder `id`                                         |
+| `--publish`                | alle            | zu veröffentlichende Gruppen: `day`, `live`, `timetable`, `week`, `homework`, `exams`, `absences`, `messages`, `school` |
+| `--days`                   | `14`            | Tage im Voraus für Hausaufgaben und den nächsten Schultag (der Stundenplan wird für mindestens 21 Tage abgerufen)       |
+| `--timezone`               | `Europe/Berlin` | Zeitzone der Schule, für die veröffentlichten Zeiten                                                                    |
+| `--poll-interval`          | `900`           | Sekunden zwischen den Abrufen tagsüber                                                                                  |
+| `--poll-interval-morning`  | `300`           | Sekunden zwischen den Abrufen 6:00–8:00 an Schultagen                                                                   |
+| `--poll-interval-night`    | `3600`          | Sekunden zwischen den Abrufen 22:00–5:30                                                                                |
 
 Dazu die Optionen, die jeder `xyz2mqtt`-Adapter hat (`-u` Broker-URL, `-n` Name, `--json-payloads`, `-v`,
 `--install`, …): `untis2mqtt --help`. Jede Option geht auch als Umgebungsvariable `UNTIS2MQTT_<OPTION>`.
@@ -108,37 +108,39 @@ Dazu die Optionen, die jeder `xyz2mqtt`-Adapter hat (`-u` Broker-URL, `-n` Name,
 (oder den reinen Wert mit `--no-json-payloads`). Zeiten sind ISO 8601 mit dem Zeitversatz der Schule, Daten
 sind ISO-Daten, `null` heißt "keins" (keine erste Stunde an einem freien Tag).
 
-| Topic                                                    | Wert                                                                                           |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `untis/connected`                                        | `2` solange WebUntis antwortet, `1` wenn nicht, `0` wenn der Adapter nicht läuft               |
-| `untis/status/<kind>/<tag>/date`                         | `"2026-10-19"`                                                                                 |
-| `untis/status/<kind>/<tag>/school`                       | `true`, wenn mindestens eine Stunde stattfindet                                                |
-| `untis/status/<kind>/<tag>/start`                        | erste Stunde, die stattfindet, `"2026-10-19T07:40:00+02:00"`                                   |
-| `untis/status/<kind>/<tag>/end`                          | letzte Stunde, die stattfindet                                                                 |
-| `untis/status/<kind>/<tag>/start_planned`, `end_planned` | dasselbe laut regulärem Stundenplan (ausfallende Stunden zählen mit)                           |
-| `untis/status/<kind>/<tag>/lessons`                      | Anzahl der Stunden, die stattfinden                                                            |
-| `untis/status/<kind>/<tag>/changes`                      | Anzahl ausfallender, geänderter, zusätzlicher oder verlegter Stunden                           |
-| `untis/status/<kind>/<tag>/timetable`                    | alle Stunden des Tages als JSON-Array (unten)                                                  |
-| `untis/status/<kind>/in_school`                          | `true` zwischen der ersten und letzten Stunde von heute                                        |
-| `untis/status/<kind>/now`                                | die Stunde, die gerade läuft, oder `null`                                                      |
-| `untis/status/<kind>/next_lesson`                        | die nächste Stunde, die stattfindet                                                            |
-| `untis/status/<kind>/last_update`                        | Zeit des letzten erfolgreichen Abrufs                                                          |
-| `untis/status/all/<tag>/…`                               | bei mehreren Kindern: frühester Beginn, spätestes Ende, Schule, wenn irgendein Kind Schule hat |
-| `untis/status/<kind>/homework`                           | Hausaufgaben von zwei Wochen zurück bis `--days` voraus (JSON-Array, unten)                    |
-| `untis/status/<kind>/homework/open`                      | Anzahl offener Hausaufgaben (nicht erledigt, nicht überfällig)                                 |
-| `untis/status/<kind>/homework/due_tomorrow`              | Anzahl offener Hausaufgaben, die morgen fällig sind                                            |
-| `untis/status/<kind>/exams`                              | Klassenarbeiten und Prüfungen im Zeitraum (JSON-Array)                                         |
-| `untis/status/<kind>/exams/next`                         | die nächste Prüfung oder `null`                                                                |
-| `untis/status/<kind>/absences`                           | Fehlzeiten des Schuljahres (JSON-Array, unten)                                                 |
-| `untis/status/<kind>/absences/count`                     | Anzahl der Fehlzeiten                                                                          |
-| `untis/status/<kind>/absences/unexcused`                 | Anzahl nicht entschuldigter Fehlzeiten                                                         |
-| `untis/status/<kind>/messages`                           | Nachrichten im WebUntis-Posteingang des Accounts (Liste mit Vorschau)                          |
-| `untis/status/<kind>/messages/unread`                    | Anzahl ungelesener Nachrichten                                                                 |
-| `untis/status/school/school_year`                        | Schuljahr: Name, Beginn, Ende                                                                  |
-| `untis/status/school/time_grid`                          | Stundenraster: Stunde, Beginn, Ende                                                            |
-| `untis/status/school/holidays`                           | kommende Ferien laut WebUntis (Name, Beginn, Ende)                                             |
-| `untis/status/school/news`                               | Tagesnachrichten der Schule                                                                    |
-| `untis/set/refresh`                                      | jetzt abrufen                                                                                  |
+| Topic                                                    | Wert                                                                                                             |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `untis/connected`                                        | `2` solange WebUntis antwortet, `1` wenn nicht, `0` wenn der Adapter nicht läuft                                 |
+| `untis/status/<kind>/<tag>/date`                         | `"2026-10-19"`                                                                                                   |
+| `untis/status/<kind>/<tag>/school`                       | `true`, wenn mindestens eine Stunde stattfindet                                                                  |
+| `untis/status/<kind>/<tag>/start`                        | erste Stunde, die stattfindet, `"2026-10-19T07:40:00+02:00"`                                                     |
+| `untis/status/<kind>/<tag>/end`                          | letzte Stunde, die stattfindet                                                                                   |
+| `untis/status/<kind>/<tag>/start_planned`, `end_planned` | dasselbe laut regulärem Stundenplan (ausfallende Stunden zählen mit)                                             |
+| `untis/status/<kind>/<tag>/lessons`                      | Anzahl der Stunden, die stattfinden                                                                              |
+| `untis/status/<kind>/<tag>/changes`                      | Anzahl ausfallender, geänderter, zusätzlicher oder verlegter Stunden                                             |
+| `untis/status/<kind>/<tag>/timetable`                    | alle Stunden des Tages als JSON-Array (unten)                                                                    |
+| `untis/status/<kind>/in_school`                          | `true` zwischen der ersten und letzten Stunde von heute                                                          |
+| `untis/status/<kind>/now`                                | die Stunde, die gerade läuft, oder `null`                                                                        |
+| `untis/status/<kind>/next_lesson`                        | die nächste Stunde, die stattfindet                                                                              |
+| `untis/status/<kind>/last_update`                        | Zeit des letzten erfolgreichen Abrufs                                                                            |
+| `untis/status/all/<tag>/…`                               | bei mehreren Kindern: frühester Beginn, spätestes Ende, Schule, wenn irgendein Kind Schule hat                   |
+| `untis/status/<kind>/week`                               | die Woche des nächsten Schultags (nach der letzten Stunde am Freitag die folgende): `{"monday", "days": [Tag…]}` |
+| `untis/status/<kind>/week/next`                          | die Woche danach                                                                                                 |
+| `untis/status/<kind>/homework`                           | Hausaufgaben von zwei Wochen zurück bis `--days` voraus (JSON-Array, unten)                                      |
+| `untis/status/<kind>/homework/open`                      | Anzahl offener Hausaufgaben (nicht erledigt, nicht überfällig)                                                   |
+| `untis/status/<kind>/homework/due_tomorrow`              | Anzahl offener Hausaufgaben, die morgen fällig sind                                                              |
+| `untis/status/<kind>/exams`                              | Klassenarbeiten und Prüfungen im Zeitraum (JSON-Array)                                                           |
+| `untis/status/<kind>/exams/next`                         | die nächste Prüfung oder `null`                                                                                  |
+| `untis/status/<kind>/absences`                           | Fehlzeiten des Schuljahres (JSON-Array, unten)                                                                   |
+| `untis/status/<kind>/absences/count`                     | Anzahl der Fehlzeiten                                                                                            |
+| `untis/status/<kind>/absences/unexcused`                 | Anzahl nicht entschuldigter Fehlzeiten                                                                           |
+| `untis/status/<kind>/messages`                           | Nachrichten im WebUntis-Posteingang des Accounts (Liste mit Vorschau)                                            |
+| `untis/status/<kind>/messages/unread`                    | Anzahl ungelesener Nachrichten                                                                                   |
+| `untis/status/school/school_year`                        | Schuljahr: Name, Beginn, Ende                                                                                    |
+| `untis/status/school/time_grid`                          | Stundenraster: Stunde, Beginn, Ende                                                                              |
+| `untis/status/school/holidays`                           | kommende Ferien laut WebUntis (Name, Beginn, Ende)                                                               |
+| `untis/status/school/news`                               | Tagesnachrichten der Schule                                                                                      |
+| `untis/set/refresh`                                      | jetzt abrufen                                                                                                    |
 
 `<tag>` ist `today`, `tomorrow` oder `next` — der nächste Schultag, der noch nicht vorbei ist: nach der
 letzten Stunde rückt er weiter, und er überspringt Wochenenden, Ferien und Tage, an denen alles ausfällt. Gibt
@@ -173,6 +175,10 @@ Eine Stunde:
 `status` ist `regular`, `changed`, `cancelled`, `additional`, `exam` oder `event`; `periods` sind die Stunden
 des Zeitrasters der Schule, die die Stunde abdeckt (eine Doppelstunde hat zwei); `notes` die Notiz für alle,
 `homework` ob zu der Stunde Hausaufgaben eingetragen sind, `color` die Fachfarbe aus WebUntis.
+
+Ein Tag in `week/…`: die Felder der Tages-Topics (`date`, `school`, `start`, `end`, `start_planned`,
+`end_planned`, `lessons`, `changes`, `holiday`) und `timetable` mit seinen Stunden. Montag bis Freitag, Samstag
+und Sonntag nur, wenn dort Unterricht ist — gedacht für Wochenansichten in Dashboards.
 
 Eine Hausaufgabe: `{"assigned", "due", "subject", "teacher", "text", "remark", "completed", "attachments"}`.
 Eine Fehlzeit: `{"date", "start", "end", "reason", "text", "excused", "excuse_status"}`. Eine Nachricht:
