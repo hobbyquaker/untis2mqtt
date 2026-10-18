@@ -2,6 +2,13 @@ import {parseConfig} from 'mqtt-interfaces-core';
 
 import pkg from './package.json' with {type: 'json'};
 
+/**
+ * `--discover` searches Untis' school list (by name or town, given as `--school`) and prints the
+ * server and login name to configure — a "cloud" scan in the core's terms: it needs nothing on the
+ * LAN, only the search text.
+ */
+export const DISCOVERY = {cloud: true, needs: ['school']};
+
 /** item groups --publish can switch; all on by default */
 export const GROUPS = [
     'day',
@@ -20,12 +27,13 @@ export const OPTIONS = {
     server: {
         alias: 's',
         type: 'string',
-        describe: 'webuntis server host of the school, e.g. example.webuntis.com',
+        describe: 'webuntis server host of the school, e.g. example.webuntis.com (see --discover)',
         demandOption: true,
+        discover: true,
     },
     school: {
         type: 'string',
-        describe: 'school login name as in the webuntis url (school=...)',
+        describe: 'school login name as in the webuntis url (school=...); with --discover: name or town to search',
         demandOption: true,
     },
     username: {
@@ -41,6 +49,17 @@ export const OPTIONS = {
         type: 'string',
         describe: 'app secret from the webuntis data access qr code (schools with sso login); replaces --password',
         secret: true,
+    },
+    'accounts-file': {
+        type: 'string',
+        describe:
+            'JSON file with several webuntis accounts, e.g. one parent account per child (see example-accounts.json)',
+        file: {
+            format: 'json',
+            example: 'example-accounts.json',
+            schema: 'accounts.schema.json',
+            describe: 'webuntis accounts: [{username, password | secret}]',
+        },
     },
     child: {
         type: 'array',
@@ -94,8 +113,10 @@ export const OPTIONS = {
 export default parseConfig({
     pkg,
     options: OPTIONS,
+    discovery: DISCOVERY,
     defaults: {name: 'untis'},
     examples: [
+        ['$0 --discover --school "Example School"', 'find the server and login name of a school'],
         ['$0 -s example.webuntis.com --school example --username parent -u mqtt://broker', 'run in the foreground'],
         [
             'sudo $0 --install -n untis -s example.webuntis.com --school example --username parent -u mqtt://broker',

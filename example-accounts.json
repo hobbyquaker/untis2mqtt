@@ -1,0 +1,10 @@
+[
+  {
+    "username": "parent_child1",
+    "password": "secret"
+  },
+  {
+    "username": "parent_child2",
+    "secret": "ABCDEFGHIJKLMNOP"
+  }
+]

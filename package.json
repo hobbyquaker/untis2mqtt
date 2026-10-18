@@ -12,7 +12,9 @@
   "files": [
     "index.js",
     "config.js",
-    "lib/"
+    "lib/",
+    "example-accounts.json",
+    "accounts.schema.json"
   ],
   "engines": {
     "node": "^20.19 || ^22.12 || >=24"

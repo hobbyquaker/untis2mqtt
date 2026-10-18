@@ -12,6 +12,11 @@ Built on [mqtt-interfaces-core](https://github.com/hobbyquaker/mqtt-interfaces-c
 [mqtt-smarthome](https://github.com/mqtt-smarthome/mqtt-smarthome) architecture, like the other
 `xyz2mqtt` adapters.
 
+## Credits
+
+The WebUntis client follows [MMM-Webuntis](https://github.com/HeikoGr/MMM-Webuntis) (MIT) by HeikoGr, whose
+handling of the web app's interface — the login, the token, sessions that end with a login page — showed the way.
+
 ## License
 
 MIT © [Sebastian Raff](https://github.com/hobbyquaker)
