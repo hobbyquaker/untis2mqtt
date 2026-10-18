@@ -9,8 +9,8 @@ import pkg from './package.json' with {type: 'json'};
  */
 export const DISCOVERY = {cloud: true, needs: ['school']};
 
-/** item groups --publish can switch; all on by default (alerts, html, homework … follow in later releases) */
-export const GROUPS = ['day', 'live', 'timetable'];
+/** item groups --publish can switch; all on by default */
+export const GROUPS = ['day', 'live', 'timetable', 'homework', 'exams', 'absences', 'messages', 'school'];
 
 export const OPTIONS = {
     server: {

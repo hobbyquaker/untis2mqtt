@@ -16,7 +16,16 @@ import config, {GROUPS} from './config.js';
 import pkg from './package.json' with {type: 'json'};
 import {loadAccounts} from './lib/accounts.js';
 import {handle as handleInstall} from './lib/install.js';
-import {allItems, childItems, parseGroups} from './lib/items.js';
+import {allItems, childItems, extraItems, parseGroups, schoolItems} from './lib/items.js';
+import {
+    homeworkRange,
+    parseAbsences,
+    parseExams,
+    parseHomework,
+    parseMessages,
+    parseNews,
+    schoolCalendar,
+} from './lib/extras.js';
 import {childNames, parseNicknames} from './lib/names.js';
 import {pollDelay} from './lib/schedule.js';
 import {addDays, buildTimetable, localNow} from './lib/timetable.js';
@@ -64,6 +73,12 @@ let sessions = [];
 let children = [];
 /** child id → the timetable of the fetched range (lib/timetable.js) */
 const timetables = new Map();
+/** child id → {homework, absences, messages, exams}, each once fetched */
+const extras = new Map();
+/** school-wide: {calendar, news} */
+const school = {};
+/** `<account>:<endpoint>` the school refuses (403) — asked once per run, then left alone */
+const refused = new Set();
 let pollTimer = null;
 let polling = false;
 let firstPublish = true;
@@ -134,6 +149,7 @@ async function discoverChildren() {
                 session,
                 timeGrid: data.timeGrid,
                 holidays: data.holidays,
+                schoolYear: data.schoolYear,
             });
         }
     }
@@ -168,6 +184,88 @@ function publishAll() {
         slots.push(result.slots);
     }
     publishItems(allItems(slots, {groups}));
+    const day = today();
+    const tomorrow = addDays(day, 1);
+    for (const child of children) {
+        const items = extraItems(child.item, extras.get(child.id) || {}, {
+            timetable: timetables.get(child.id),
+            now,
+            today: day,
+            tomorrow,
+            groups,
+        });
+        publishItems(items);
+    }
+    publishItems(schoolItems(school, {groups}));
+}
+
+/**
+ * One optional endpoint: its result, or undefined when the school refuses it (asked once, logged
+ * once) or it failed this time (the previous result stays published).
+ */
+async function optional(session, endpoint, call) {
+    const key = `${session.username}:${endpoint}`;
+    if (refused.has(key)) {
+        return undefined;
+    }
+    try {
+        return await call();
+    } catch (error) {
+        if (error.code === 'FORBIDDEN') {
+            refused.add(key);
+            log.info(`${endpoint}: not available for this account (${error.message})`);
+        } else if (isAuthError(error)) {
+            throw error;
+        } else {
+            log.warn(`${endpoint}: ${error.message}`);
+        }
+        return undefined;
+    }
+}
+
+/** homework, absences, messages and exams per child, the calendar and messages of the day once */
+async function fetchExtras(start, end) {
+    const perSession = new Map();
+    for (const session of new Set(children.map((c) => c.session))) {
+        const range = homeworkRange(start, Number(config.days) || 14);
+        const fetched = {};
+        if (groups.has('homework')) {
+            const data = await optional(session, 'homework', () => session.homework(range.start, range.end));
+            fetched.homework = data && parseHomework(data);
+        }
+        if (groups.has('messages')) {
+            const data = await optional(session, 'messages', () => session.messages());
+            fetched.messages = data && parseMessages(data, timeZone);
+        }
+        perSession.set(session, fetched);
+    }
+    for (const child of children) {
+        const own = {...perSession.get(child.session)};
+        const previous = extras.get(child.id) || {};
+        if (groups.has('absences')) {
+            const from = child.schoolYear?.start || addDays(start, -365);
+            const data = await optional(child.session, 'absences', () => child.session.absences(child.id, from, start));
+            own.absences = data && parseAbsences(data, timeZone);
+        }
+        if (groups.has('exams')) {
+            const data = await optional(child.session, 'exams', () => child.session.exams(child.id, start, end));
+            own.exams = data ? parseExams(data, timeZone) : undefined;
+        }
+        // a failed fetch keeps what was published before
+        extras.set(
+            child.id,
+            Object.fromEntries(Object.keys({...previous, ...own}).map((k) => [k, own[k] ?? previous[k]])),
+        );
+    }
+    if (groups.has('school') && children[0]) {
+        const first = children[0];
+        school.calendar = schoolCalendar(
+            {schoolYear: first.schoolYear, timeGrid: first.timeGrid, holidays: first.holidays},
+            start,
+        );
+        const data = await optional(first.session, 'news', () => first.session.news(start));
+        school.news = data ? parseNews(data) : school.news;
+    }
 }
 
 async function poll() {
@@ -189,6 +287,7 @@ async function poll() {
             );
             pubStatus(`${child.item}/last_update`, new Date().toISOString());
         }
+        await fetchExtras(start, end);
         publishAll();
         setDeviceConnected(true);
         if (firstPublish) {
