@@ -13,9 +13,8 @@ Gebaut auf [mqtt-interfaces-core](https://github.com/hobbyquaker/mqtt-interfaces
 [mqtt-smarthome](https://github.com/mqtt-smarthome/mqtt-smarthome)-Architektur, mit systemd-Installer und
 Docker-Image — wie die anderen `xyz2mqtt`-Adapter.
 
-**0.x ist eine Vorschau.** Die Topics unten sind das, was 0.1 veröffentlicht; Benachrichtigungen bei
-Ausfall und Vertretung, eine HTML-Ansicht für Dashboards, Hausaufgaben und Fehlzeiten sowie Home-Assistant-
-Discovery folgen in späteren Versionen. Bis 1.0 können sich Topics noch ändern.
+**0.x ist eine Vorschau.** Benachrichtigungen bei Ausfall und Vertretung, eine HTML-Ansicht für Dashboards
+und Home-Assistant-Discovery folgen in späteren Versionen. Bis 1.0 können sich Topics noch ändern.
 
 ## Wofür
 
@@ -84,21 +83,21 @@ statt des Passworts angegeben.
 
 ## Optionen
 
-| Option                     | Standard        |                                                                                         |
-| -------------------------- | --------------- | --------------------------------------------------------------------------------------- |
-| `-s, --server`             | —               | WebUntis-Server der Schule (siehe `--discover`)                                         |
-| `--school`                 | —               | Login-Name der Schule; mit `--discover` der gesuchte Name oder Ort                      |
-| `--username`, `--password` | —               | ein WebUntis-Login                                                                      |
-| `--secret`                 | —               | das App-Secret statt des Passworts (Single Sign-on)                                     |
-| `--accounts-file`          | —               | JSON-Datei mit mehreren Logins (siehe oben)                                             |
-| `--child`                  | —               | ein Spitzname pro Kind: `--child 1234=anna 5678=ben` (die IDs stehen beim Start im Log) |
-| `--child-names`            | `nickname`      | wie ein Kind in den Topics heißt: `nickname`, `firstname`, `fullname` oder `id`         |
-| `--publish`                | alle            | zu veröffentlichende Gruppen: `day`, `live`, `timetable`                                |
-| `--days`                   | `14`            | wie viele Tage im Voraus abgerufen werden                                               |
-| `--timezone`               | `Europe/Berlin` | Zeitzone der Schule, für die veröffentlichten Zeiten                                    |
-| `--poll-interval`          | `900`           | Sekunden zwischen den Abrufen tagsüber                                                  |
-| `--poll-interval-morning`  | `300`           | Sekunden zwischen den Abrufen 6:00–8:00 an Schultagen                                   |
-| `--poll-interval-night`    | `3600`          | Sekunden zwischen den Abrufen 22:00–5:30                                                |
+| Option                     | Standard        |                                                                                                                 |
+| -------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
+| `-s, --server`             | —               | WebUntis-Server der Schule (siehe `--discover`)                                                                 |
+| `--school`                 | —               | Login-Name der Schule; mit `--discover` der gesuchte Name oder Ort                                              |
+| `--username`, `--password` | —               | ein WebUntis-Login                                                                                              |
+| `--secret`                 | —               | das App-Secret statt des Passworts (Single Sign-on)                                                             |
+| `--accounts-file`          | —               | JSON-Datei mit mehreren Logins (siehe oben)                                                                     |
+| `--child`                  | —               | ein Spitzname pro Kind: `--child 1234=anna 5678=ben` (die IDs stehen beim Start im Log)                         |
+| `--child-names`            | `nickname`      | wie ein Kind in den Topics heißt: `nickname`, `firstname`, `fullname` oder `id`                                 |
+| `--publish`                | alle            | zu veröffentlichende Gruppen: `day`, `live`, `timetable`, `homework`, `exams`, `absences`, `messages`, `school` |
+| `--days`                   | `14`            | wie viele Tage im Voraus abgerufen werden                                                                       |
+| `--timezone`               | `Europe/Berlin` | Zeitzone der Schule, für die veröffentlichten Zeiten                                                            |
+| `--poll-interval`          | `900`           | Sekunden zwischen den Abrufen tagsüber                                                                          |
+| `--poll-interval-morning`  | `300`           | Sekunden zwischen den Abrufen 6:00–8:00 an Schultagen                                                           |
+| `--poll-interval-night`    | `3600`          | Sekunden zwischen den Abrufen 22:00–5:30                                                                        |
 
 Dazu die Optionen, die jeder `xyz2mqtt`-Adapter hat (`-u` Broker-URL, `-n` Name, `--json-payloads`, `-v`,
 `--install`, …): `untis2mqtt --help`. Jede Option geht auch als Umgebungsvariable `UNTIS2MQTT_<OPTION>`.
@@ -125,6 +124,20 @@ sind ISO-Daten, `null` heißt "keins" (keine erste Stunde an einem freien Tag).
 | `untis/status/<kind>/next_lesson`                        | die nächste Stunde, die stattfindet                                                            |
 | `untis/status/<kind>/last_update`                        | Zeit des letzten erfolgreichen Abrufs                                                          |
 | `untis/status/all/<tag>/…`                               | bei mehreren Kindern: frühester Beginn, spätestes Ende, Schule, wenn irgendein Kind Schule hat |
+| `untis/status/<kind>/homework`                           | Hausaufgaben von zwei Wochen zurück bis `--days` voraus (JSON-Array, unten)                    |
+| `untis/status/<kind>/homework/open`                      | Anzahl offener Hausaufgaben (nicht erledigt, nicht überfällig)                                 |
+| `untis/status/<kind>/homework/due_tomorrow`              | Anzahl offener Hausaufgaben, die morgen fällig sind                                            |
+| `untis/status/<kind>/exams`                              | Klassenarbeiten und Prüfungen im Zeitraum (JSON-Array)                                         |
+| `untis/status/<kind>/exams/next`                         | die nächste Prüfung oder `null`                                                                |
+| `untis/status/<kind>/absences`                           | Fehlzeiten des Schuljahres (JSON-Array, unten)                                                 |
+| `untis/status/<kind>/absences/count`                     | Anzahl der Fehlzeiten                                                                          |
+| `untis/status/<kind>/absences/unexcused`                 | Anzahl nicht entschuldigter Fehlzeiten                                                         |
+| `untis/status/<kind>/messages`                           | Nachrichten im WebUntis-Posteingang des Accounts (Liste mit Vorschau)                          |
+| `untis/status/<kind>/messages/unread`                    | Anzahl ungelesener Nachrichten                                                                 |
+| `untis/status/school/school_year`                        | Schuljahr: Name, Beginn, Ende                                                                  |
+| `untis/status/school/time_grid`                          | Stundenraster: Stunde, Beginn, Ende                                                            |
+| `untis/status/school/holidays`                           | kommende Ferien laut WebUntis (Name, Beginn, Ende)                                             |
+| `untis/status/school/news`                               | Tagesnachrichten der Schule                                                                    |
 | `untis/set/refresh`                                      | jetzt abrufen                                                                                  |
 
 `<tag>` ist `today`, `tomorrow` oder `next` — der nächste Schultag, der noch nicht vorbei ist: nach der
@@ -150,12 +163,26 @@ Eine Stunde:
   "moved": false,
   "changes": {"teacher": {"from": ["Mül"], "to": ["Sch"]}, "room": {"from": ["104"], "to": ["211"]}},
   "text": "Vertretung",
-  "info": ""
+  "info": "",
+  "notes": "",
+  "homework": false,
+  "color": "#80ff00"
 }
 ```
 
 `status` ist `regular`, `changed`, `cancelled`, `additional`, `exam` oder `event`; `periods` sind die Stunden
-des Zeitrasters der Schule, die die Stunde abdeckt (eine Doppelstunde hat zwei).
+des Zeitrasters der Schule, die die Stunde abdeckt (eine Doppelstunde hat zwei); `notes` die Notiz für alle,
+`homework` ob zu der Stunde Hausaufgaben eingetragen sind, `color` die Fachfarbe aus WebUntis.
+
+Eine Hausaufgabe: `{"assigned", "due", "subject", "teacher", "text", "remark", "completed", "attachments"}`.
+Eine Fehlzeit: `{"date", "start", "end", "reason", "text", "excused", "excuse_status"}`. Eine Nachricht:
+`{"sent", "subject", "preview", "sender", "read", "attachments"}` — nur die Liste; der Inhalt wird nicht
+abgerufen, weil WebUntis die Nachricht dann als gelesen markieren könnte.
+
+**Klassenarbeiten:** Viele Schulen geben die Prüfungsliste für Eltern nicht frei (WebUntis antwortet
+"Unerlaubter Zugriff"). untis2mqtt fragt sie einmal ab und nimmt sonst die Prüfungen, die im Stundenplan als
+solche eingetragen sind. Ist beides leer, bleibt `exams` leer. Was eine Schule nicht freigibt (Hausaufgaben,
+Fehlzeiten, Nachrichten), wird einmal im Log gemeldet und nicht veröffentlicht.
 
 ### Beispiele
 
@@ -182,7 +209,8 @@ mqtt:
 
 ## Datenschutz
 
-Die Stundenpläne der Kinder landen retained auf dem Broker: Fächer, Lehrerkürzel, Räume. Wer `untis/#` lesen
+Die Stundenpläne der Kinder landen retained auf dem Broker: Fächer, Lehrerkürzel, Räume — und, wenn nicht
+mit `--publish` abgewählt, Hausaufgaben, Fehlzeiten mit Gründen und die Vorschau der Nachrichten. Wer `untis/#` lesen
 darf, sollte über die ACLs des Brokers geregelt werden. Kinder erscheinen standardmäßig unter einem Spitznamen
 oder als `student_<id>`; ihre echten Namen nur mit `--child-names firstname` oder `fullname`. Die Zugangsdaten
 kommen aus den Optionen oder der Account-Datei und werden nie geloggt.
